@@ -10,9 +10,11 @@ const setupInput = function(conn) {
 };
 
 const handleUserInput = function(key) {
+  // Exit with ^C
   if (key === '\u0003') {
     process.exit();
   }
+  // Move with WASD
   if (key === 'w') {
     connection.write('Move: up');
   }
@@ -24,6 +26,16 @@ const handleUserInput = function(key) {
   }
   if (key === 'd') {
     connection.write('Move: right');
+  }
+  // Send messages
+  if (key === 'm') {
+    connection.write('Say: ☺️☺️☺️');
+  }
+  if (key === 'n') {
+    connection.write('Say: ✧･ﾟ: *✧･ﾟ:* ');
+  }
+  if (key === 'b') {
+    connection.write('Say: (┬┬_┬┬)');
   }
 };
 
