@@ -13,6 +13,11 @@ const INPUTS =  {
   a: 'Move: left',
   s: 'Move: down',
   d: 'Move: right',
+  //Move with arrow keys
+  '\u001B\u005B\u0041': 'Move: up',
+  '\u001B\u005B\u0044': 'Move: left',
+  '\u001B\u005B\u0042': 'Move: down',
+  '\u001B\u005B\u0043': 'Move: right',
   // Send messages
   0: 'Say: Hi',
   1: 'Say: Welcome!',
