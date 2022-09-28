@@ -1,3 +1,5 @@
+const { INPUTS } = require('./constants');
+
 let connection;
 const setupInput = function(conn) {
   connection = conn;
@@ -14,28 +16,8 @@ const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-  // Move with WASD
-  if (key === 'w') {
-    connection.write('Move: up');
-  }
-  if (key === 'a') {
-    connection.write('Move: left');
-  }
-  if (key === 's') {
-    connection.write('Move: down');
-  }
-  if (key === 'd') {
-    connection.write('Move: right');
-  }
-  // Send messages
-  if (key === 'm') {
-    connection.write('Say: ☺️☺️☺️');
-  }
-  if (key === 'n') {
-    connection.write('Say: ✧･ﾟ: *✧･ﾟ:* ');
-  }
-  if (key === 'b') {
-    connection.write('Say: (┬┬_┬┬)');
+  if (INPUTS[key]) {
+    connection.write(INPUTS[key]);
   }
 };
 
